@@ -9,7 +9,7 @@ export const LoginAdmin = () => {
   const [Usuario, setUsuario] = useState("");
   const [Contrasenia, setContrasenia] = useState("");
 
-  const url = "http://localhost:3000/api/authWeb/loginAdmin";
+  const url = "https://soft-shirt-5fec7e90a5b6.herokuapp.com/api//authWeb/loginAdmin";
 
 
   const [errors, setErrors] = useState({

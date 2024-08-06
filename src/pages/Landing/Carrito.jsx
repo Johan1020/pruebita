@@ -18,7 +18,7 @@ export const Carrito = () => {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const itemDetails = await Promise.all(
       cart.map(item =>
-        axios.get(`http://localhost:3000/api/productos/${item.IdProd}`)
+        axios.get(`https://soft-shirt-5fec7e90a5b6.herokuapp.com/api//productos/${item.IdProd}`)
           .then(res => ({
             ...res.data,
             CantidadSeleccionada: item.CantidadSeleccionada

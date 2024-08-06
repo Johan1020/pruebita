@@ -7,7 +7,7 @@ import Pagination from "../../assets/js/Pagination";
 import SearchBar from "../../assets/js/SearchBar";
 
 export const Colores = () => {
-  const url = "http://localhost:3000/api/colores";
+  const url = "https://soft-shirt-5fec7e90a5b6.herokuapp.com/api/colores";
   const [Colores, setColores] = useState([]);
   const [IdColor, setIdColor] = useState("");
   const [Color, setColor] = useState("");

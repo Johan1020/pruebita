@@ -6,7 +6,7 @@ import Pagination from "../../assets/js/Pagination";
 import SearchBar from "../../assets/js/SearchBar";
 
 export const Catalogo = () => {
-  const url = "http://localhost:3000/api/productos";
+  const url = "https://soft-shirt-5fec7e90a5b6.herokuapp.com/api/productos";
   const [productosAdmin, setProductosAdmin] = useState([]);
   const [Disenios, setDisenios] = useState([]);
   const [Insumos, setInsumos] = useState([]);
@@ -55,7 +55,7 @@ export const Catalogo = () => {
   };
 
   const getDisenios = async () => {
-    const respuesta = await axios.get("http://localhost:3000/api/disenios");
+    const respuesta = await axios.get("https://soft-shirt-5fec7e90a5b6.herokuapp.com/api/disenios");
     const DiseniosActivos = respuesta.data.filter(
       (disenio) => disenio.Estado === "Activo"
     );
@@ -65,7 +65,7 @@ export const Catalogo = () => {
   };
 
   const getInsumos = async () => {
-    const respuesta = await axios.get("http://localhost:3000/api/insumos");
+    const respuesta = await axios.get("https://soft-shirt-5fec7e90a5b6.herokuapp.com/api/insumos");
     const InsumosActivas = respuesta.data.filter(
       (insumo) => insumo.Estado === "Activo"
     );
@@ -73,7 +73,7 @@ export const Catalogo = () => {
   };
 
   const getTallas = async () => {
-    const respuesta = await axios.get("http://localhost:3000/api/tallas");
+    const respuesta = await axios.get("https://soft-shirt-5fec7e90a5b6.herokuapp.com/api/tallas");
     const TallasActivas = respuesta.data.filter(
       (talla) => talla.Estado === "Activo"
     );
@@ -580,28 +580,28 @@ export const Catalogo = () => {
   const handleDetalleProducto = async (idProducto) => {
     try {
       const respuestaProducto = await axios.get(
-        `http://localhost:3000/api/productos/${idProducto}`
+        `https://soft-shirt-5fec7e90a5b6.herokuapp.com/api/productos/${idProducto}`
       );
 
       const producto = respuestaProducto.data;
 
       const respuestaInsumo = await axios.get(
-        `http://localhost:3000/api/insumos/${producto.IdInsumo}`
+        `https://soft-shirt-5fec7e90a5b6.herokuapp.com/api/insumos/${producto.IdInsumo}`
       );
 
       const respuestaDisenio = await axios.get(
-        `http://localhost:3000/api/disenios/${producto.IdDisenio}`
+        `https://soft-shirt-5fec7e90a5b6.herokuapp.com/api/disenios/${producto.IdDisenio}`
       );
 
       const insumo = respuestaInsumo.data;
       const disenio = respuestaDisenio.data;
 
       const respuestaColorInsumo = await axios.get(
-        `http://localhost:3000/api/colores/${insumo.IdColor}`
+        `https://soft-shirt-5fec7e90a5b6.herokuapp.com/api/colores/${insumo.IdColor}`
       );
 
       const respuestaTallaInsumo = await axios.get(
-        `http://localhost:3000/api/tallas/${insumo.IdTalla}`
+        `https://soft-shirt-5fec7e90a5b6.herokuapp.com/api//tallas/${insumo.IdTalla}`
       );
 
       const colorInsumo = respuestaColorInsumo.data;

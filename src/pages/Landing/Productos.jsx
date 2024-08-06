@@ -11,7 +11,7 @@ import Swal from "sweetalert2";
 
 export const Productos = () => {
   
-  const url = "http://localhost:3000/api/productos";
+  const url = "https://soft-shirt-5fec7e90a5b6.herokuapp.com/api//productos";
 
   const [Productos, setProductos] = useState([]);
 

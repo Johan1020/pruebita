@@ -6,7 +6,7 @@ import Pagination from "../../assets/js/Pagination";
 import SearchBar from "../../assets/js/SearchBar";
 
 export const Clientes = () => {
-  const url = "http://localhost:3000/api/clientes";
+  const url = "https://soft-shirt-5fec7e90a5b6.herokuapp.com/api/clientes";
   const [Clientes, setClientes] = useState([]);
   const [IdCliente, setIdCliente] = useState("");
   const [TipoDocumento, setTipoDocumento] = useState("");
@@ -91,21 +91,21 @@ export const Clientes = () => {
     }
   };
 
-  const openModalCambiarContrasenia = (cliente) => {
-    setIdCliente(cliente.IdCliente);
-    setContrasenia(cliente.Contrasenia || ""); // Asegúrate de manejar el caso donde no hay contraseña inicial
-    setTitle("Cambiar Contraseña");
-    setOperation(3); // Indica que la operación es cambiar contraseña
-    setErrors({
-      contrasenia: "",
-    });
+  // const openModalCambiarContrasenia = (cliente) => {
+  //   setIdCliente(cliente.IdCliente);
+  //   setContrasenia(cliente.Contrasenia || ""); // Asegúrate de manejar el caso donde no hay contraseña inicial
+  //   setTitle("Cambiar Contraseña");
+  //   setOperation(3); // Indica que la operación es cambiar contraseña
+  //   setErrors({
+  //     contrasenia: "",
+  //   });
 
-    // Mostrar el modal de cambiar contraseña
-    const modal = new bootstrap.Modal(
-      document.getElementById("modalCambiarContrasenia")
-    );
-    modal.show();
-  };
+  //   // Mostrar el modal de cambiar contraseña
+  //   const modal = new bootstrap.Modal(
+  //     document.getElementById("modalCambiarContrasenia")
+  //   );
+  //   modal.show();
+  // };
 
   const guardarCliente = async () => {
     const cleanedNombreApellido = NombreApellido.trim().replace(/\s+/g, " "); // Elimina los espacios múltiples y los extremos

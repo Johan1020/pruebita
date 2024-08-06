@@ -6,7 +6,7 @@ import Pagination from "../../assets/js/Pagination";
 import SearchBar from "../../assets/js/SearchBar";
 
 export const Compras = () => {
-  const url = "http://localhost:3000/api/compras";
+  const url = "https://soft-shirt-5fec7e90a5b6.herokuapp.com/api/compras";
   const [Compras, setCompras] = useState([]);
   const [IdCompra, setIdCompra] = useState("");
   const [proveedores, setProveedores] = useState([]);
@@ -59,7 +59,7 @@ export const Compras = () => {
   const getProveedores = async () => {
     try {
       const respuesta = await axios.get(
-        "http://localhost:3000/api/proveedores"
+        "https://soft-shirt-5fec7e90a5b6.herokuapp.com/api/proveedores"
       );
       const proveedoresActivos = respuesta.data.filter(
         (proveedor) => proveedor.Estado === "Activo"
@@ -72,7 +72,7 @@ export const Compras = () => {
 
   const getInsumos = async () => {
     try {
-      const respuesta = await axios.get("http://localhost:3000/api/insumos");
+      const respuesta = await axios.get("https://soft-shirt-5fec7e90a5b6.herokuapp.com/api/insumos");
       const insumosActivos = respuesta.data.filter(
         (insumo) => insumo.Estado === "Activo"
       );
@@ -93,7 +93,7 @@ export const Compras = () => {
   const handleDetalleCompra = async (idCompra) => {
     try {
       const respuesta = await axios.get(
-        `http://localhost:3000/api/compras/${idCompra}`
+        `https://soft-shirt-5fec7e90a5b6.herokuapp.com/api/compras/${idCompra}`
       );
       const compra = respuesta.data;
       console.log("Detalle de compra:", compra);
@@ -474,7 +474,7 @@ export const Compras = () => {
       if (result.isConfirmed) {
         try {
           // Cambiar el estado de la compra a "Cancelado"
-          await axios.put(`http://localhost:3000/api/compras/${id}`, {
+          await axios.put(`https://soft-shirt-5fec7e90a5b6.herokuapp.com/api/compras/${id}`, {
             Estado: "Cancelado",
           });
 

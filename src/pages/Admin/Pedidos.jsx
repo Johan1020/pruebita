@@ -6,7 +6,7 @@ import Pagination from "../../assets/js/Pagination";
 import SearchBar from "../../assets/js/SearchBar";
 
 export const Pedidos = () => {
-  const url = "http://localhost:3000/api/pedidos";
+  const url = "https://soft-shirt-5fec7e90a5b6.herokuapp.com/api/pedidos";
   const [pedidos, setPedidos] = useState([]);
   const [IdPedido, setIdPedido] = useState("");
   const [IdPedidoActualizar, setIdPedidoActualizar] = useState("");
@@ -65,7 +65,7 @@ export const Pedidos = () => {
 
   const getClientes = async () => {
     try {
-      const respuesta = await axios.get("http://localhost:3000/api/clientes");
+      const respuesta = await axios.get("https://soft-shirt-5fec7e90a5b6.herokuapp.com/api/clientes");
       const ClientesActivos = respuesta.data.filter(
         (cliente) => cliente.Estado === "Activo"
       );
@@ -77,7 +77,7 @@ export const Pedidos = () => {
 
   const getProductos = async () => {
     try {
-      const respuesta = await axios.get("http://localhost:3000/api/productos");
+      const respuesta = await axios.get("https://soft-shirt-5fec7e90a5b6.herokuapp.com/api/productos");
       const productosActivos = respuesta.data.filter(
         (producto) => producto.Estado === "Activo"
       );
@@ -90,7 +90,7 @@ export const Pedidos = () => {
   const getEstadosPedidos = async () => {
     try {
       const respuesta = await axios.get(
-        "http://localhost:3000/api/estadosPedidos"
+        "https://soft-shirt-5fec7e90a5b6.herokuapp.com/api/estadosPedidos"
       );
 
       setEstadosPedidos(respuesta.data);
@@ -110,7 +110,7 @@ export const Pedidos = () => {
   const handleDetalleCompra = async (idPedido) => {
     try {
       const respuesta = await axios.get(
-        `http://localhost:3000/api/pedidos/${idPedido}`
+        `https://soft-shirt-5fec7e90a5b6.herokuapp.com/api/pedidos/${idPedido}`
       );
       const pedido = respuesta.data;
       console.log("Detalle de Pedido:", pedido);
@@ -363,7 +363,7 @@ export const Pedidos = () => {
         try {
           console.log(idPed);
           // Cambiar el estado de la compra a "Cancelado"
-          await axios.put(`http://localhost:3000/api/pedidos/${idPed}`, {
+          await axios.put(`https://soft-shirt-5fec7e90a5b6.herokuapp.com/api/pedidos/${idPed}`, {
             Estado: idEstadosPedidos,
           });
 

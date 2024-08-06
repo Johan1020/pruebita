@@ -6,7 +6,7 @@ import Pagination from "../../assets/js/Pagination";
 import SearchBar from "../../assets/js/SearchBar";
 
 export const Insumos = () => {
-  const url = "http://localhost:3000/api/insumos";
+  const url = "https://soft-shirt-5fec7e90a5b6.herokuapp.com/api/insumos";
   const [Insumos, setInsumos] = useState([]);
   const [Colores, setColores] = useState([]);
   const [Tallas, setTallas] = useState([]);
@@ -43,7 +43,7 @@ export const Insumos = () => {
   };
 
   const getColores = async () => {
-    const respuesta = await axios.get("http://localhost:3000/api/colores");
+    const respuesta = await axios.get("https://soft-shirt-5fec7e90a5b6.herokuapp.com/api/colores");
     const coloresActivos = respuesta.data.filter(
       (color) => color.Estado === "Activo"
     );
@@ -51,7 +51,7 @@ export const Insumos = () => {
   };
 
   const getTallas = async () => {
-    const respuesta = await axios.get("http://localhost:3000/api/tallas");
+    const respuesta = await axios.get("https://soft-shirt-5fec7e90a5b6.herokuapp.com/api/tallas");
     const tallasActivas = respuesta.data.filter(
       (talla) => talla.Estado === "Activo"
     );
@@ -362,7 +362,7 @@ export const Insumos = () => {
       if (result.isConfirmed) {
         try {
           const response = await fetch(
-            `http://localhost:3000/api/insumos/${idInsumo}`,
+            `https://soft-shirt-5fec7e90a5b6.herokuapp.com/api/insumos/${idInsumo}`,
             {
               method: "DELETE",
             }

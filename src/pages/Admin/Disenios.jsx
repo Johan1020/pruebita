@@ -14,7 +14,7 @@ import {
 import withReactContent from "sweetalert2-react-content";
 
 export const Disenios = () => {
-  const url = "http://localhost:3000/api/disenios";
+  const url = "https://soft-shirt-5fec7e90a5b6.herokuapp.com/api/disenios";
   const [Disenios, setDisenios] = useState([]);
   const [IdDisenio, setIdDisenio] = useState("");
   const [NombreDisenio, setNombreDisenio] = useState("");
@@ -303,7 +303,7 @@ export const Disenios = () => {
   const handleDetalleDisenio = async (idDisenio) => {
     try {
       const respuesta = await axios.get(
-        `http://localhost:3000/api/disenios/${idDisenio}`
+        `https://soft-shirt-5fec7e90a5b6.herokuapp.com/api/disenios/${idDisenio}`
       );
 
       const disenio = respuesta.data;

@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
 export const Register = () => {
-  const url = "http://localhost:3000/api/clientes";
+  const url = "https://soft-shirt-5fec7e90a5b6.herokuapp.com/api//clientes";
   const [Clientes, setClientes] = useState([]);
   const [IdCliente, setIdCliente] = useState("");
   const [TipoDocumento, setTipoDocumento] = useState("");

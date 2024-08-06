@@ -6,8 +6,8 @@ import Pagination from "../../assets/js/Pagination";
 import SearchBar from "../../assets/js/SearchBar";
 
 export const Usuarios = () => {
-  const url = "http://localhost:3000/api/usuarios";
-  const rolesUrl = "http://localhost:3000/api/roles"; // URL de la API de roles
+  const url = "https://soft-shirt-5fec7e90a5b6.herokuapp.com/api/usuarios";
+  const rolesUrl = "https://soft-shirt-5fec7e90a5b6.herokuapp.com/api/roles"; // URL de la API de roles
   const [Usuarios, setUsuarios] = useState([]);
   const [IdUsuario, setIdUsuario] = useState("");
   const [IdRol, setIdRol] = useState("");
@@ -268,7 +268,7 @@ export const Usuarios = () => {
   const handleDetalleUsuario = async (IdUsuario) => {
     try {
       const respuesta = await axios.get(
-        `http://localhost:3000/api/usuarios/${IdUsuario}`
+        `https://soft-shirt-5fec7e90a5b6.herokuapp.com/api//usuarios/${IdUsuario}`
       );
       const usuario = respuesta.data;
       console.log("Detalle de usuario:", usuario);

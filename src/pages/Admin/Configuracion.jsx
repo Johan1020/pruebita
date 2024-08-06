@@ -6,9 +6,9 @@ import Pagination from "../../assets/js/Pagination";
 import SearchBar from "../../assets/js/SearchBar";
 
 export const Configuracion = () => {
-  let url = "http://localhost:3000/api/roles";
-  let urlPermisos = "http://localhost:3000/api/permisos"; // URL para obtener los permisos
-  let urlUsuarios = "http://localhost:3000/api/usuarios"; // URL para obtener los permisos
+  let url = "https://soft-shirt-5fec7e90a5b6.herokuapp.com/api/roles";
+  let urlPermisos = "https://soft-shirt-5fec7e90a5b6.herokuapp.com/api/permisos"; // URL para obtener los permisos
+  let urlUsuarios = "https://soft-shirt-5fec7e90a5b6.herokuapp.com/api/usuarios"; // URL para obtener los permisos
 
   const [Roles, setRoles] = useState([]);
   const [Permisos, setPermisos] = useState([]); // Estado para permisos

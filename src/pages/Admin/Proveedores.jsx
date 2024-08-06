@@ -6,7 +6,7 @@ import Pagination from "../../assets/js/Pagination";
 import SearchBar from "../../assets/js/SearchBar";
 
 export const Proveedores = () => {
-  let url = "http://localhost:3000/api/proveedores";
+  let url = "https://soft-shirt-5fec7e90a5b6.herokuapp.com/api/proveedores";
   const [Proveedores, setProveedores] = useState([]);
   const [IdProveedor, setIdProveedor] = useState("");
   const [TipoDocumento, setTipoDocumento] = useState("");
